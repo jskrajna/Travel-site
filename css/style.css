@@ -1,8 +1,6 @@
 body {
     font-family: 'Montserrat', sans-serif;
-    background: -webkit-linear-gradient( #fff, #a0c5d8);
-    background: -o-linear-gradient(#fff, #a0c5d8);
-    background: -moz-linear-gradient(#fff, #a0c5d8);
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#a0c5d8));
     background: linear-gradient(#fff, #a0c5d8);
 }
 
@@ -19,7 +17,6 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.05) inset;
-    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.05) inset;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.05) inset;
 }
 
@@ -38,6 +35,7 @@ img {
 }
 
 * {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -63,14 +61,18 @@ img {
     animation: Element 700ms ease-in forwards;
 }
 
-@keyframes Element {
+@-webkit-keyframes Element {
     0% {
         opacity: 0;
+        -webkit-transform: scale(0.3);
         transform: scale(0.3);
-        transform: translateY(-10%);
     }
-    60% {
-        transform: rotateY(90deg)
+    70% {
+        opacity:0.7;
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
+        
+
     }
     100% {
         opacity: 1;
@@ -107,6 +109,7 @@ a {
 hr {
     border: 0;
     height: 1px;
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(63, 106, 123, 0)), color-stop(rgba(63, 106, 123, 0.75)), to(rgba(63, 106, 123, 0)));
     background-image: linear-gradient(to right, rgba(63, 106, 123, 0), rgba(63, 106, 123, 0.75), rgba(63, 106, 123, 0));
 }
 
@@ -144,9 +147,21 @@ hr {
     display: table;
     width: 100%;
     opacity: 0;
+    -webkit-animation-name: drop-menu;
     animation-name: drop-menu;
+    -webkit-animation-duration: 1s;
     animation-duration: 1s;
+    -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes drop-menu {
+    0 {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
 }
 
 @keyframes drop-menu {
@@ -218,9 +233,13 @@ nav {
 }
 
 .mainButton {
+    background: -webkit- -webkit-gradient(linear, left top, right bottom, from(#fff), to(#a0c5d8));
     background: -webkit- linear-gradient(to bottom right, #fff, #a0c5d8);
+    background: -o- -webkit-gradient(linear, left top, right bottom, from(#fff), to(#a0c5d8));
     background: -o- linear-gradient(to bottom right, #fff, #a0c5d8);
+    background: -moz- -webkit-gradient(linear, left top, right bottom, from(#fff), to(#a0c5d8));
     background: -moz- linear-gradient(to bottom right, #fff, #a0c5d8);
+    background: -webkit-gradient(linear, left top, right bottom, from(#fff), to(#a0c5d8));
     background: linear-gradient(to bottom right, #fff, #a0c5d8);
     border-radius: 0.2em;
     color: #fff;
@@ -228,9 +247,6 @@ nav {
     font: 700 1em Montserrat;
     letter-spacing: 0.05vw;
     -webkit-transition: 0.2s;
-    -moz-transition: 0.2s;
-    -ms-transition: 0.2s;
-    -o-transition: 0.2s;
     transition: 0.2s;
     padding: 0.7em;
 }
@@ -241,9 +257,6 @@ nav {
     background: transparent;
     color: #FDAE84;
     -webkit-transition: 0.2s;
-    -moz-transition: 0.2s;
-    -ms-transition: 0.2s;
-    -o-transition: 0.2s;
     transition: 0.2s;
 }
 
@@ -261,36 +274,10 @@ nav {
     height: 50px;
     width: 50px;
     -webkit-animation: bounce 1s infinite;
-    -moz-animation: bounce 1s infinite;
-    -o-animation: bounce 1s infinite;
     animation: bounce 1s infinite;
 }
 
 @-webkit-keyframes bounce {
-    0% {
-        bottom: 0px;
-    }
-    50% {
-        bottom: 15px;
-    }
-    100% {
-        bottom: 30;
-    }
-}
-
-@-moz-keyframes bounce {
-    0% {
-        bottom: 0px;
-    }
-    50% {
-        bottom: 15px;
-    }
-    100% {
-        bottom: 30;
-    }
-}
-
-@-o-keyframes bounce {
     0% {
         bottom: 0px;
     }
@@ -322,27 +309,18 @@ a div#bouncingButton {
 #main-menu li a:hover {
     color: #FDAE84;
     -webkit-transition: 0.5s ease;
-    -moz-transition: 0.5s ease;
-    -ms-transition: 0.5s ease;
-    -o-transition: 0.5s ease;
     transition: 0.5s ease;
 }
 
 #main-menu li a:hover:before {
     content: "| ";
     -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -ms-transition: 1s ease;
-    -o-transition: 1s ease;
     transition: 1s ease;
 }
 
 #main-menu li a:hover:after {
     content: " |";
     -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -ms-transition: 1s ease;
-    -o-transition: 1s ease;
     transition: 1s ease;
 }
 
@@ -353,7 +331,10 @@ a div#bouncingButton {
 }
 
 .hero-image li {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-flex: 1;
     flex: 1;
     -webkit-flex: 1;
     -ms-flex: 1;
@@ -379,7 +360,6 @@ a div#bouncingButton {
     #main-menu li {
         font-size:0.7em;
         -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.07) inset;
-        -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.07) inset;
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.07) inset;
     }
 
@@ -396,7 +376,6 @@ a div#bouncingButton {
     #resp-menu {
         background-color: #a0c5d8;
         -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.07) inset;
-        -moz-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.07) inset;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.07) inset;
     }
     
@@ -416,18 +395,12 @@ a div#bouncingButton {
     display: block;
     cursor: pointer;
     -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
     transition: 0.3s;
     float: right;
 }
 #menu-icon:hover span {
     background-color: #fff;
     -webkit-transition: 200ms;
-    -moz-transition: 200ms;
-    -ms-transition: 200ms;
-    -o-transition: 200ms;
     transition: 200ms;
 }
 
@@ -481,9 +454,10 @@ h3 {
     color: #fff;
 }
 #team img {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5), 0 0 53px rgba(0, 0, 0, 0.07) inset;
-    -moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5), 0 0 53px rgba(0, 0, 0, 0.07) inset;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5), 0 0 53px rgba(0, 0, 0, 0.07) inset;
 }
 #team span {
@@ -497,7 +471,6 @@ h3 {
 #team div.item {
     max-height: 70vh;
     -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 50px rgba(0, 0, 0, 0.07) inset;
-    -moz-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 50px rgba(0, 0, 0, 0.07) inset;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 50px rgba(0, 0, 0, 0.07) inset;
 }
 #team p {
@@ -528,7 +501,6 @@ h3 {
 /*****************************************/
 #offert img {
     -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 50px rgba(0, 0, 0, 0.07) inset;
-    -moz-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 50px rgba(0, 0, 0, 0.07) inset;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 0 50px rgba(0, 0, 0, 0.07) inset;
 }
 #offert .info {
@@ -612,7 +584,6 @@ h3 {
 #testimonials img {
     border: 10px solid rgba(255, 255, 255, 0.5);
     -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.07) inset;
-    -moz-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.07) inset;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 50px rgba(0, 0, 0, 0.07) inset;
 }
 .cycle-slideshow {
@@ -714,9 +685,9 @@ textarea {
     border-style: hidden;
 }
 #contact .col-8 {
+    background: -webkit-gradient( linear, left top, left bottom, from(rgba(246, 247, 249, 0.8)), to(rgba(253, 174, 132, 0.8)));
     background: linear-gradient( rgba(246, 247, 249, 0.8), rgba(253, 174, 132, 0.8));
     -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(0, 0, 0, 0.07) inset;
-    -moz-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(0, 0, 0, 0.07) inset;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(0, 0, 0, 0.07) inset;
 }
 #contact div.col-4 {
@@ -725,7 +696,6 @@ textarea {
     background-position: center;
     background-size: cover;
     -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(0, 0, 0, 0.07) inset;
-    -moz-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(0, 0, 0, 0.07) inset;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(0, 0, 0, 0.07) inset;
 }
 #contact div.col-4 p {
@@ -748,6 +718,7 @@ textarea {
 /*****************************************/
 #content {
     border-top: 10px solid #fdae84;
+    background: -webkit-gradient( linear, left top, left bottom, from(rgba(6, 131, 180, 0.7)), to(rgba(92, 94, 94, 0.7))), url("../images/career1.jpg");
     background: linear-gradient( rgba(6, 131, 180, 0.7), rgba(92, 94, 94, 0.7)), url("../images/career1.jpg");
     max-width: 100%;
     height: 500px;
@@ -756,7 +727,6 @@ textarea {
     background-size: cover;
     overflow: hidden;
     -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(0, 0, 0, 0.07) inset;
-    -moz-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(0, 0, 0, 0.07) inset;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(0, 0, 0, 0.07) inset;
 }
 #content div {
@@ -768,9 +738,6 @@ textarea {
     border-top-style: ridge;
     border-color: #a0c5d8;
     -webkit-transition: 200ms;
-    -moz-transition: 200ms;
-    -ms-transition: 200ms;
-    -o-transition: 200ms;
     transition: 200ms;
 }
 #content div:nth-child(1) {
@@ -1231,11 +1198,9 @@ praca@elegant-travels.com*/
 .col-10 {
     width: 83.33%;
 }
-
 .col-11 {
     width: 91.66%;
 }
-
 .col-12 {
     width: 100%;
 } 
@@ -1250,7 +1215,6 @@ praca@elegant-travels.com*/
     opacity: 0.9;
     clear: both;
     -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.04) inset;
-    -moz-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.04) inset;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.04) inset;
 }
 
@@ -1273,18 +1237,16 @@ ul#menu {
 
 #menu a:hover {
     -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -ms-transition: 0.3s;
-    -o-transition: 0.3s;
     transition: 0.3s;
 }
-
 li#logo,
 #menu img {
     width: 80%;
 }
 
 #information{
+    display:-webkit-box;
+    display:-ms-flexbox;
     display:flex;
 }
     #team p{
@@ -1297,6 +1259,7 @@ li#logo,
         font-size:1.2em;
         position:absolute;
         top:50%;
+        -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
         margin-left:15%;
         width:70%;
@@ -1304,6 +1267,7 @@ li#logo,
     .cycle-prev,
     .cycle-next {
         top:50%;
+        -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
     }
     .cycle-prev{
@@ -1314,6 +1278,7 @@ li#logo,
     }
     #content div{
         top:50%;
+        -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
         margin:auto 5% ;
     }
@@ -1340,6 +1305,8 @@ li#logo,
 }
 @media only screen and (min-width: 790px){
     #main-menu {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
         background-color: transparent;
     }
@@ -1354,6 +1321,7 @@ li#logo,
         text-align: center;
     }
     #main-menu li{
+    -webkit-box-shadow:none;
     box-shadow:none;
         } 
     #main-menu a {
@@ -1377,24 +1345,15 @@ li#logo,
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
     transform: translateY(-100%) !important;
-    -ms-transform: translateY(-100%) !important;
     -webkit-transform: translateY(-100%) !important;
-    -o-transform: translateY(-100%) !important;
-    -moz-transform: translateY(-100%)!important;
     transform: translateY(-100%)!important;
     }
    #offert .info:hover .box {
     color:#fff;
     transform: translateY(0) !important;
-    -ms-transform: translateY(0);
     -webkit-transform: translateY(0);
-    -o-transform: translateY(0);
-    -moz-transform: translateY(0);
     transform: translateY(0);
     -webkit-transition: 1s ease;
-    -moz-transition: 1s ease;
-    -ms-transition: 1s ease;
-    -o-transition: 1s ease;
     transition: 1s ease;
     border-bottom: 0.5em solid #fff;
 }
