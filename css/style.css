@@ -62,6 +62,7 @@ img {
 }
 
 @-webkit-keyframes Element {
+
     0% {
         opacity: 0;
         -webkit-transform: scale(0.3);
@@ -83,12 +84,19 @@ img {
         opacity: 0;
         -webkit-transform: scale(0.3);
         transform: scale(0.3);
+
         -webkit-transform: translateY(-10%);
         transform: translateY(-10%);
     }
     60% {
         -webkit-transform: rotateY(90deg);
         transform: rotateY(90deg)
+
+    }
+    70% {
+        opacity:0.7;
+        -webkit-transform: scale(1.05);
+        transform: scale(1.05);
     }
     100% {
         opacity: 1;
@@ -376,6 +384,41 @@ a div#bouncingButton {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.07) inset;
 }
 
+
+    #main-menu {
+        display: none;
+        background-color: #a0c5d8;
+        padding: 0;
+    }
+    
+    #main-menu a {
+        
+        margin: 0.5em auto;
+        color: #fff;
+    }
+    
+    #main-menu li {
+        font-size:0.7em;
+        -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.07) inset;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.07) inset;
+    }
+
+    #main-menu img {
+        display: none;
+    }
+    
+    #resp-menu img {
+        position: relative;
+        margin: 1em 1em 0.2em 1em;
+        opacity: 0.5;
+    }
+    
+    #resp-menu {
+        background-color: #a0c5d8;
+        -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.07) inset;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.07) inset;
+    }
+    
 
 /**************************/
 
@@ -945,6 +988,7 @@ footer .socialMedia {
     #team p {
         min-height: 256px;
     }
+
     #team span {
         font-size: 0.9em;
     }
@@ -952,6 +996,145 @@ footer .socialMedia {
         font-size: 1.2em;
         position: absolute;
         top: 50%;
+
+}
+
+/*Dołącz do nas!
+Lubisz pracę w turystyce? Znasz minimum dwa języki obce, praca z ludźmi nie jest dla Ciebie wyzwaniem? Dołącz do nas!
+CV prosimy przesyłać pod adres
+praca@elegant-travels.com*/
+
+@media only screen and (min-width:386px){
+    .col-3 {
+    width: 50%;
+}
+
+    #offert .box h2{
+        font-size:1.5em;
+        margin: 1.5em auto;
+        padding-bottom:1.5em;
+    }
+    #offert .box p{
+        font-size:1em;
+    }
+    #offert .destinations span{
+        font-size:1.5em;
+    }
+    #content p{
+        font-size:0.95em;
+    } 
+    #about h3{
+        font-size:1.8em;
+    }
+
+}
+@media only screen and (min-width: 550px){
+    #team p{
+        min-height:140px;
+    } 
+}
+
+@media only screen and (min-width: 736px){
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+.col-11 {
+    width: 91.66%;
+}
+.col-12 {
+    width: 100%;
+} 
+#menu {
+    position: fixed;
+    width: 100%;
+    background-color: rgba(146, 176, 199, 0.5);
+    color: #FFFFFF;
+    z-index: 9999;
+    display: none;
+    font-size: 2vh;
+    opacity: 0.9;
+    clear: both;
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.04) inset;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.04) inset;
+}
+
+#menu #logo {
+    padding-bottom: 1vh;
+    padding-top: 0;
+}
+
+#menu a {
+    color: #fff;
+}
+
+ul#menu {
+    color: #fff;
+    vertical-align: middle;
+    text-align: center;
+    padding-top: 1vh;
+    max-height: 70vh;
+}
+
+#menu a:hover {
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+}
+li#logo,
+#menu img {
+    width: 80%;
+}
+
+#information{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+}
+    #team p{
+        min-height:256px;
+    }
+    #team span{
+        font-size:0.9em;
+    }
+    #testimonials p{
+        font-size:1.2em;
+        position:absolute;
+        top:50%;
         -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
         margin-left: 15%;
@@ -959,7 +1142,11 @@ footer .socialMedia {
     }
     .cycle-prev,
     .cycle-next {
+
         top: 50%;
+
+        top:50%;
+
         -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
     }
@@ -969,8 +1156,13 @@ footer .socialMedia {
     .cycle-next {
         right: 5%;
     }
+
     #content div {
         top: 50%;
+
+    #content div{
+        top:50%;
+
         -webkit-transform: translateY(-50%);
         transform: translateY(-50%);
         margin: auto 5%;
@@ -1013,10 +1205,17 @@ footer .socialMedia {
     #logo {
         text-align: center;
     }
+
     #main-menu li {
         -webkit-box-shadow: none;
         box-shadow: none;
     }
+
+    #main-menu li{
+    -webkit-box-shadow:none;
+    box-shadow:none;
+        } 
+
     #main-menu a {
         font-size: 1.2em;
         margin-top: 1.8em;
@@ -1029,6 +1228,7 @@ footer .socialMedia {
         display: none;
     }
     #offert .box {
+
         position: static;
         width: 100%;
         height: 100%;
@@ -1049,6 +1249,26 @@ footer .socialMedia {
         transition: 1s ease;
         border-bottom: 0.5em solid #fff;
     }
+
+    position: static;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    transform: translateY(-100%) !important;
+    -webkit-transform: translateY(-100%) !important;
+    transform: translateY(-100%)!important;
+    }
+   #offert .info:hover .box {
+    color:#fff;
+    transform: translateY(0) !important;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: 1s ease;
+    transition: 1s ease;
+    border-bottom: 0.5em solid #fff;
 }
 
 @media only screen and (min-width: 820px) {
